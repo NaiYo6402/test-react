@@ -1,28 +1,34 @@
 import React, { useState } from "react"
-import {Redirect} from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
 import firebaseConfig from "../config"
 
-const signup = () =>{
-    const [currentUser,setCurrentUser] = useState[null];
+const Signup = () =>{
+    const [currentUser,setCurrentUser] = useState(null);
+
+
     const handleSubmit = (e) =>{
         e.preventDefault();
-        const { email,password } = e.target.elements;
-        try {
-            firebaseConfig.auth().createUserWithEmailAndPassword(email.value,password.value)
-            setCurrentUser(true);
-        }catch(error){
-            alert (error)
-        }
-    }
-    if(currentUser){
-        return <Redirect to="/home" />
+        const { email,password } = e.target;
+        console.log(e.target)
+        console.log("email :",email)
+        console.log("password :",password)
+        // try {
+        //     firebaseConfig.auth().createUserWithEmailAndPassword(email.value,password.value)
+        //     setCurrentUser(true);
+        // }catch(error){
+        //     alert (error)
+        // }
     }
 
+
+    // if(currentUser){
+    //     return <Redirect to="/home" />
+    // }
 
     return(
         <>
         <h1>Refun signup</h1>
-        <form>
+        <form onSubmit={handleSubmit}> 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
@@ -38,4 +44,4 @@ const signup = () =>{
     )
 
 }
-export default signup;
+export default Signup;

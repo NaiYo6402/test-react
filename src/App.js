@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Singup from './companents/Singup'
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
           <div className="container">
-            <h1>Refun signup</h1>
+
+            <Singup/>
+            {/* <h1>Refun signup</h1>
             <form>
               <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -19,7 +22,7 @@ function App() {
                   <input type="password" class="form-control" id="exampleInputPassword1"/>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+              </form> */}
         </div>
       </header>
       
